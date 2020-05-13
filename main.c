@@ -1,5 +1,12 @@
 #include "monty.h"
 
+void my_exit(int status, void *arg)
+{
+	vars_t *vars = (vars_t *) arg;
+
+	(void) status;
+	printf("%s", vars->line);
+}
 /**
  * get_opcode - function that returns a function pointer to buildin function
  * @opcode: string with the opcode
@@ -61,9 +68,13 @@ int main(int argc, char *argv[])
 		printf("Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
+	/* on_exit(&free, (vars.line));
+	on_exit(&close, (vars.fp));*/
+	on_exit(my_exit, &vars);
 	for (; getline(&(vars.line), &(vars.len_line), vars.fp) != -1; vars.lines++)
 	{
 		vars.opcode = strtok(vars.line, " \n\t\r");
+		e_vars.op_arg = strtok(NULL, " \n\t\r");
 		if (vars.opcode == NULL || vars.opcode[0] == '#')
 			continue;
 		vars.op = get_opcode(vars.opcode);

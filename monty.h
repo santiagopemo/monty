@@ -8,6 +8,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <ctype.h>
 
 
 /**
@@ -39,7 +40,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 /**
- * struct variables_s - structure with all the variables
+ * struct variables_s - structure with all the main's variables
  * @line: buffer for getline function
  * @len_line: length of buffer for getline function
  * @fp: file pointer
@@ -62,9 +63,26 @@ typedef struct variables_s
 	unsigned int lines;
 } vars_t;
 
+/**
+ * struct extern_variables_s - estruct of external variables
+ * @op_arg: argument of the actual opcode in main program
+ *
+ * Description: structure that contains all the external variables
+ * because it can be declared only one external variable, in this
+ * case a instance of this structure
+ */
+typedef struct extern_variables_s
+{
+	char *op_arg;
+	unsigned int len_stack;
+} extern_variables_t;
+
+extern_variables_t e_vars;
+
 void (*get_opcode(char *opcode))(stack_t **stack, unsigned int line_number);
 void init_vars(vars_t *vars);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
+stack_t *add_dnodeint(stack_t **head, const int n);
 
 #endif
