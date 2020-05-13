@@ -95,7 +95,7 @@ int main(int argc, char *argv[])
 		else
 		{
 			dprintf(STDERR_FILENO, "L%d: unknown instruction %s\n",
-											vars.lines, vars.opcode);
+				vars.lines, vars.opcode);
 			exit(EXIT_FAILURE);
 		}
 		free(vars.line);
