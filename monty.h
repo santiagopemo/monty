@@ -87,5 +87,7 @@ void _pall(stack_t **stack, unsigned int line_number);
 stack_t *add_dnodeint(stack_t **head, const int n);
 void free_stack(stack_t *head);
 void my_exit(int status, void *arg);
+void _pint(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
 
 #endif

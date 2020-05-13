@@ -29,14 +29,14 @@ void _push(stack_t **stack, unsigned int line_number)
 			tmp = add_dnodeint(stack, i);
 			if (tmp == NULL)
 			{
-				printf("Error: malloc failed\n");
+				dprintf(STDERR_FILENO, "Error: malloc failed\n");
 				exit(EXIT_FAILURE);
 			}
 			e_vars.len_stack++;
 			return;
 		}
 	}
-	printf("L%u: usage: push integer\n", line_number);
+	dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_number);
 	exit(EXIT_FAILURE);
 }
 

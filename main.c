@@ -31,6 +31,8 @@ void (*get_opcode(char *opcode))(stack_t **stack, unsigned int line_number)
 	instruction_t instructions[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
+		{"pop", _pop},
 		{NULL, NULL}
 	};
 
@@ -72,13 +74,13 @@ int main(int argc, char *argv[])
 	on_exit(exit_handler, &vars);
 	if (argc != 2)
 	{
-		printf("USAGE: monty file\n");
+		dprintf(STDERR_FILENO, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	vars.fp = fopen(argv[1], "r");
 	if (vars.fp == NULL)
 	{
-		printf("Error: Can't open file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	for (; getline(&(vars.line), &(vars.len_line), vars.fp) != -1; vars.lines++)
@@ -92,7 +94,8 @@ int main(int argc, char *argv[])
 			vars.op(&(vars.stack), vars.lines);
 		else
 		{
-			printf("L%d: unknown instruction %s\n", vars.lines, vars.opcode);
+			dprintf(STDERR_FILENO, "L%d: unknown instruction %s\n",
+											vars.lines, vars.opcode);
 			exit(EXIT_FAILURE);
 		}
 		free(vars.line);
