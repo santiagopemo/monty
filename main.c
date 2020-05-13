@@ -81,6 +81,7 @@ int main(int argc, char *argv[])
 {
 	vars_t vars;
 
+	e_vars.len_stack = 0;
 	init_vars(&vars);
 	on_exit(exit_handler, &vars);
 	if (argc != 2)
