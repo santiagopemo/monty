@@ -12,7 +12,7 @@ void _mod(stack_t **stack, unsigned int line_number)
 {
 	if (e_vars.len_stack < 2)
 	{
-		dprintf(STDERR_FILENO, "L%d: can't div, stack too short\n", line_number);
+		dprintf(STDERR_FILENO, "L%d: can't mod, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if ((*stack)->n == 0)
