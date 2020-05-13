@@ -1,11 +1,23 @@
 #include "monty.h"
 
-void my_exit(int status, void *arg)
+/**
+ * exit_handler - handles the exit with the function on exit
+ * @status: exit status (UNUSED)
+ * @arg: argument in this case a vars_t structure
+ *
+ * Return: nothing
+ */
+void exit_handler(int status, void *arg)
 {
 	vars_t *vars = (vars_t *) arg;
 
 	(void) status;
-	printf("%s", vars->line);
+	if (vars->line != NULL)
+		free(vars->line);
+	if (vars->fp != NULL)
+		fclose(vars->fp);
+	if (vars->stack != NULL)
+		free_stack(vars->stack);
 }
 /**
  * get_opcode - function that returns a function pointer to buildin function
@@ -57,6 +69,7 @@ int main(int argc, char *argv[])
 	vars_t vars;
 
 	init_vars(&vars);
+	on_exit(exit_handler, &vars);
 	if (argc != 2)
 	{
 		printf("USAGE: monty file\n");
@@ -68,9 +81,6 @@ int main(int argc, char *argv[])
 		printf("Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	/* on_exit(&free, (vars.line));
-	on_exit(&close, (vars.fp));*/
-	on_exit(my_exit, &vars);
 	for (; getline(&(vars.line), &(vars.len_line), vars.fp) != -1; vars.lines++)
 	{
 		vars.opcode = strtok(vars.line, " \n\t\r");
@@ -83,16 +93,10 @@ int main(int argc, char *argv[])
 		else
 		{
 			printf("L%d: unknown instruction %s\n", vars.lines, vars.opcode);
-			/*free_stack(stack)*/
-			free(vars.line);
-			fclose(vars.fp);
 			exit(EXIT_FAILURE);
 		}
 		free(vars.line);
 		vars.line = NULL;
 	}
-	/*free_stack(stack)*/
-	free(vars.line);
-	fclose(vars.fp);
-	return (EXIT_SUCCESS);
+	exit(EXIT_SUCCESS);
 }

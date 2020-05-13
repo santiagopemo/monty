@@ -66,6 +66,7 @@ typedef struct variables_s
 /**
  * struct extern_variables_s - estruct of external variables
  * @op_arg: argument of the actual opcode in main program
+ * @len_stack: stack length
  *
  * Description: structure that contains all the external variables
  * because it can be declared only one external variable, in this
@@ -84,5 +85,7 @@ void init_vars(vars_t *vars);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 stack_t *add_dnodeint(stack_t **head, const int n);
+void free_stack(stack_t *head);
+void my_exit(int status, void *arg);
 
 #endif
