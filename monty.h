@@ -10,6 +10,8 @@
 #include <unistd.h>
 #include <ctype.h>
 
+#define STACK 0
+#define QUEUE 1
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -67,6 +69,7 @@ typedef struct variables_s
  * struct extern_variables_s - estruct of external variables
  * @op_arg: argument of the actual opcode in main program
  * @len_stack: stack length
+ * @stack_mode: stack mode, it could be STACK(0) or QUEUE(1)
  *
  * Description: structure that contains all the external variables
  * because it can be declared only one external variable, in this
@@ -76,6 +79,7 @@ typedef struct extern_variables_s
 {
 	char *op_arg;
 	unsigned int len_stack;
+	int stack_mode;
 } extern_variables_t;
 
 extern_variables_t e_vars;
@@ -84,7 +88,9 @@ void (*get_opcode(char *opcode))(stack_t **stack, unsigned int line_number);
 void init_vars(vars_t *vars);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
+stack_t *add_snode(stack_t **head, const int n);
 stack_t *add_dnodeint(stack_t **head, const int n);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
 void free_stack(stack_t *head);
 void my_exit(int status, void *arg);
 void _pint(stack_t **stack, unsigned int line_number);
@@ -100,5 +106,7 @@ void _pchar(stack_t **stack, unsigned int line_number);
 void _pstr(stack_t **stack, unsigned int line_number);
 void _rotl(stack_t **stack, unsigned int line_number);
 void _rotr(stack_t **stack, unsigned int line_number);
+void _stack(stack_t **stack, unsigned int line_number);
+void _queue(stack_t **stack, unsigned int line_number);
 
 #endif

@@ -26,7 +26,7 @@ void _push(stack_t **stack, unsigned int line_number)
 		if (arg[i] == '\0')
 		{
 			i = atoi(arg);
-			tmp = add_dnodeint(stack, i);
+			tmp = add_snode(stack, i);
 			if (tmp == NULL)
 			{
 				dprintf(STDERR_FILENO, "Error: malloc failed\n");
