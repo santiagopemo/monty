@@ -126,12 +126,12 @@ julien@ubuntu:~/monty$
 * You have to use `malloc` and `free` and are not allowed to use any other function from `man malloc` (realloc, calloc, …)
 
 #### Usage
-The usage for all the opcodes is only by typing its name is:
-* Uasage: `<opcode_name>`
+The usage for all the opcodes is only by typing its in the script name is:
+* Uasage: `<opcode_name>`.
 The only opcode that allows arguments is `push`
-* Uasage: `push <int>`
-  * where `<int>` is an integer
-Example:
+* Uasage: `push <int>`.
+  * where `<int>` is an integer.
+**Example:**
 ```
 julien@ubuntu:~/monty$ cat -e bytecodes/00.m
 push 1$
@@ -146,23 +146,23 @@ julien@ubuntu:~/monty$
 ```
 ## Tasks :page_with_curl:
 ### Mandatory
-- [x] **[0. push, pall](./0-push_pall.c)** - Implement the `push` and `pall` opcodes.
-- [x] **[1. pint](./1-pint.c)** - Implement the `pint` opcode.
-- [x] **[2. pop](./2-pop.c)** - Implement the `pop` opcode.
-- [x] **[3. swap](./3-swap.c)** - Implement the `swap` opcode.
-- [x] **[4. add](./4-add.c)** - Implement the `add` opcode.
-- [x] **[5. nop](./5-nop.c)** - Implement the `nop` opcode.
+- [x] **[0. push, pall](./0-push_pall.c)** - Implement the `push` and `pall` opcodes. The opcode `push` pushes an element to the stack, and the opcode `pall` prints all the values on the stack, starting from the top of the stack.
+- [x] **[1. pint](./1-pint.c)** - Implement the `pint` opcode. The opcode pint prints the value at the top of the stack, followed by a new line.
+- [x] **[2. pop](./2-pop.c)** - Implement the `pop` opcode. The opcode pop removes the top element of the stack.
+- [x] **[3. swap](./3-swap.c)** - Implement the `swap` opcode. The opcode swap swaps the top two elements of the stack.
+- [x] **[4. add](./4-add.c)** - Implement the `add` opcode. The opcode add adds the top two elements of the stack.
+- [x] **[5. nop](./5-nop.c)** - Implement the `nop` opcode. The opcode nop doesn’t do anything.
 ### Advance :muscle:
-- [x] **[6. sub](./6-sub.c)** - Implement the `sub` opcode.
-- [x] **[7. div](./7-div.c)** - Implement the `div` opcode.
-- [x] **[8. mul](./8-mul.c)** - Implement the `mul` opcode.
-- [x] **[9. mod](./9-mod.c)** - Implement the `mod` opcode.
+- [x] **[6. sub](./6-sub.c)** - Implement the `sub` opcode. The opcode sub subtracts the top element of the stack from the second top element of the stack.
+- [x] **[7. div](./7-div.c)** - Implement the `div` opcode. The opcode div divides the second top element of the stack by the top element of the stack.
+- [x] **[8. mul](./8-mul.c)** - Implement the `mul` opcode.The opcode mul multiplies the second top element of the stack with the top element of the stack.
+- [x] **[9. mod](./9-mod.c)** - Implement the `mod` opcode. The opcode mod computes the rest of the division of the second top element of the stack by the top element of the stack.
 - [x] **[10. comments](./main.c)** - Every good language comes with the capability of commenting. When the first non-space character of a line is `#`, treat this line as a comment (don’t do anything).
-- [x] **[11. pchar](./11-pchar.c)** - Implement the `pchar` opcode.
-- [x] **[12. pstr](./12-pstr.c)** - Implement the `pstr` opcode.
-- [x] **[13. rotl](./13-rotl.c)** - Implement the `rotl` opcode.
-- [x] **[14. rotr](./14-rotr.c)** - Implement the `rotr` opcode.
-- [x] **[15. stack, queue](./15-stack_queue.c)** - Implement the `stack` and `queue` opcodes.
+- [x] **[11. pchar](./11-pchar.c)** - Implement the `pchar` opcode.The opcode pchar prints the char at the top of the stack, followed by a new line.
+- [x] **[12. pstr](./12-pstr.c)** - Implement the `pstr` opcode.The opcode pstr prints the string starting at the top of the stack, followed by a new line.
+- [x] **[13. rotl](./13-rotl.c)** - Implement the `rotl` opcode. The opcode rotl rotates the stack to the top.
+- [x] **[14. rotr](./14-rotr.c)** - Implement the `rotr` opcode. The opcode rotr rotates the stack to the bottom.
+- [x] **[15. stack, queue](./15-stack_queue.c)** - Implement the `stack` and `queue` opcodes. The opcode stack sets the format of the data to a stack (LIFO), the default behavior of the program, and the opcode queue sets the format of the data to a queue (FIFO).
 - [x] **[16. Holberton](./bf/1000-holberton.bf)** - Write a Brainf\*ck script that prints `Holberton`, followed by a new line.
 - [x] **[17. Add two digits](./bf/1001-add.bf)** - Add two digits given by the user.
 - [x] **[18. Multiplication](./bf/1002-mul.bf)** - Multiply two digits given by the user.
