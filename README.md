@@ -125,12 +125,28 @@ julien@ubuntu:~/monty$
 * If you can’t malloc anymore, print the error message `Error: malloc failed`, followed by a new line, and exit with status `EXIT_FAILURE`.
 * You have to use `malloc` and `free` and are not allowed to use any other function from `man malloc` (realloc, calloc, …)
 
+#### Usage
+The usage for all the opcodes is only by typing its name is:
+* Uasage: `<opcode_name>`
+The only opcode that allows arguments is `push`
+* Uasage: `push <int>`
+  * where `<int>` is an integer
+Example:
+```
+julien@ubuntu:~/monty$ cat -e bytecodes/00.m
+push 1$
+push 2$
+push 3$
+pall$
+julien@ubuntu:~/monty$ ./monty bytecodes/00.m
+3
+2
+1
+julien@ubuntu:~/monty$
+```
 ## Tasks :page_with_curl:
 ### Mandatory
 - [x] **[0. push, pall](./0-push_pall.c)** - Implement the `push` and `pall` opcodes.
-* The opcode `push` pushes an element to the stack
-  * Usage: `push <int>`
-    * where `<int>` is an integer
 - [x] **[1. pint](./1-pint.c)** - Implement the `pint` opcode.
 - [x] **[2. pop](./2-pop.c)** - Implement the `pop` opcode.
 - [x] **[3. swap](./3-swap.c)** - Implement the `swap` opcode.
