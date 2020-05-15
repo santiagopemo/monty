@@ -128,9 +128,11 @@ julien@ubuntu:~/monty$
 #### Usage
 The usage for all the opcodes is only by typing its in the script name is:
 * Uasage: `<opcode_name>`.
-The only opcode that allows arguments is `push`
+
+Only the `push` opcode allows arguments
 * Uasage: `push <int>`.
   * where `<int>` is an integer.
+ 
 **Example:**
 ```
 julien@ubuntu:~/monty$ cat -e bytecodes/00.m
