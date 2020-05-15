@@ -127,27 +127,30 @@ julien@ubuntu:~/monty$
 
 ## Tasks :page_with_curl:
 ### Mandatory
-- [x] **[0. push, pall](./)** - Implement the `push` and `pall` opcodes.
-- [x] **[1. pint](./)** - Implement the `pint` opcode.
-- [x] **[2. pop](./)** - Implement the `pop` opcode.
-- [x] **[3. swap](./)** - Implement the `swap` opcode.
-- [x] **[4. add](./)** - Implement the `add` opcode.
-- [x] **[5. nop](./)** - Implement the `nop` opcode.
+- [x] **[0. push, pall](./0-push_pall.c)** - Implement the `push` and `pall` opcodes.
+* The opcode `push` pushes an element to the stack
+  * Usage: `push <int>`
+    * where `<int>` is an integer
+- [x] **[1. pint](./1-pint.c)** - Implement the `pint` opcode.
+- [x] **[2. pop](./2-pop.c)** - Implement the `pop` opcode.
+- [x] **[3. swap](./3-swap.c)** - Implement the `swap` opcode.
+- [x] **[4. add](./4-add.c)** - Implement the `add` opcode.
+- [x] **[5. nop](./5-nop.c)** - Implement the `nop` opcode.
 ### Advance :muscle:
-- [x] **[6. sub](./)** - Implement the `sub` opcode.
-- [x] **[7. div](./)** - Implement the `div` opcode.
-- [x] **[8. mul](./)** - Implement the `mul` opcode.
-- [x] **[9. mod](./)** - Description
-- [x] **[10. comments](./)** - Description
-- [x] **[11. pchar](./)** - Description
-- [x] **[12. pstr](./)** - Description
-- [x] **[13. rotl](./)** - Description
-- [x] **[14. rotr](./)** - Description
-- [x] **[15. stack, queue](./)** - Description
-- [x] **[16. Holberton](./)** - Description
-- [x] **[17. Add two digits](./)** - Description
-- [x] **[18. Multiplication](./)** - Description
-- [x] **[19. Multiplication level up](./)** - Description
+- [x] **[6. sub](./6-sub.c)** - Implement the `sub` opcode.
+- [x] **[7. div](./7-div.c)** - Implement the `div` opcode.
+- [x] **[8. mul](./8-mul.c)** - Implement the `mul` opcode.
+- [x] **[9. mod](./9-mod.c)** - Implement the `mod` opcode.
+- [x] **[10. comments](./main.c)** - Every good language comes with the capability of commenting. When the first non-space character of a line is `#`, treat this line as a comment (don’t do anything).
+- [x] **[11. pchar](./11-pchar.c)** - Implement the `pchar` opcode.
+- [x] **[12. pstr](./12-pstr.c)** - Implement the `pstr` opcode.
+- [x] **[13. rotl](./13-rotl.c)** - Implement the `rotl` opcode.
+- [x] **[14. rotr](./14-rotr.c)** - Implement the `rotr` opcode.
+- [x] **[15. stack, queue](./15-stack_queue.c)** - Implement the `stack` and `queue` opcodes.
+- [x] **[16. Holberton](./bf/1000-holberton.bf)** - Write a Brainf\*ck script that prints `Holberton`, followed by a new line.
+- [x] **[17. Add two digits](./bf/1001-add.bf)** - Add two digits given by the user.
+- [x] **[18. Multiplication](./bf/1002-mul.bf)** - Multiply two digits given by the user.
+- [x] **[19. Multiplication level up](./bf/1003-mul.bf)** - Multiply two digits given by the user.
 
 
 ## Author :pencil:
